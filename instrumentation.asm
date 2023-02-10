@@ -25,9 +25,9 @@ instrumentation proc
 	movaps	[rsp+50h], xmm5
 
 	mov		rcx, rsp
-	add		rcx, 500h ; ExceptionRecord
+	add		rcx, 590h ; ExceptionRecord
 	mov		rdx, rsp
-	add		rdx, 10h ; ContextRecord
+	add		rdx, A0h ; ContextRecord
 	call	InstrumentationCallbackInternal
 
 	; restore volatile registers
