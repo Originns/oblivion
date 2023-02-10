@@ -2,4 +2,4 @@
 
 This repository contains a sample project that demonstrates how to utilize the Instrumentation Callbacks feature to intercept exceptions being dispatched to usermode.
 
-Read more [here]()
+Read more [here](https://www.unknowncheats.me/forum/c-and-c-/570532-oblivion-exception-handling-nirvana.html#post3676219)
