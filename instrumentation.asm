@@ -4,9 +4,9 @@ extrn InstrumentationCallbackInternal : proc
 .code  
 
 instrumentation proc
-	cmp		r10, KiUserExceptionDispatcher
-	jne		exit
-	
+	cmp	r10, KiUserExceptionDispatcher
+	jne	exit
+
 	; backup volatile registers
 	sub 	rsp, 8h
 	push	rax
@@ -24,10 +24,10 @@ instrumentation proc
 	movaps	[rsp+40h], xmm4
 	movaps	[rsp+50h], xmm5
 
-	mov		rcx, rsp
-	add		rcx, 590h ; ExceptionRecord
-	mov		rdx, rsp
-	add		rdx, A0h ; ContextRecord
+	mov	rcx, rsp
+	add	rcx, 590h ; ExceptionRecord
+	mov	rdx, rsp
+	add	rdx, A0h ; ContextRecord
 	call	InstrumentationCallbackInternal
 
 	; restore volatile registers
@@ -48,11 +48,11 @@ instrumentation proc
 	add 	rsp, 8h
 
 exit:
-	mov 	rcx, r10
-	mov 	r10, 0
+	mov	rcx, r10
+	mov	r10, 0
 
-	jmp		rcx
-	int		3
+	jmp	rcx
+	int	3
 instrumentation endp
 
 end
